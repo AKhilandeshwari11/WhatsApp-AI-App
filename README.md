@@ -29,7 +29,7 @@ A full-stack WhatsApp-style customer support application built with React, FastA
 | AI Workflow     | LangGraph, LangChain              |
 | LLM             | Groq LLaMA 3.1                    |
 | Frontend        | React, Vite, Axios                |
-| API Testing     | Swagger / OpenAPI, Postman        |
+| API Testing     | Swagger        |
 | Version Control | Git, GitHub                       |
 
 ## Project Structure
@@ -90,10 +90,7 @@ pip install -r requirements.txt
 Create a `.env` file:
 
 ```env
-GROQ_API_KEY=<your_groq_api_key>
-WHATSAPP_API_URL=<your_whatsapp_api_url>
-WHATSAPP_ACCESS_TOKEN=<your_access_token>
-WHATSAPP_PHONE_NUMBER_ID=<your_phone_number_id>
+GROQ_API_KEY=<your_groq_api_key
 DATABASE_URL=sqlite:///./whatsapp.db
 ```
 
@@ -208,7 +205,7 @@ React Dashboard
 
 ## Testing
 
-The backend APIs can be tested using FastAPI Swagger UI or Postman.
+The backend APIs can be tested using FastAPI Swagger UI 
 
 Example webhook request:
 
