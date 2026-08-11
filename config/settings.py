@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     whatsapp_phone_number_id: str = ""
     twilio_account_sid: str = ""
     twilio_auth_token: str = ""
+    twilio_whatsapp_number: str = ""  
     database_url: str = "sqlite:///./whatsapp.db"
     llm_api_key: str = ""
     groq_api_key: str
