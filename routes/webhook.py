@@ -69,9 +69,10 @@ def webhook(
 
         return ai_reply
 
-    except Exception:
+    except Exception as e:
         db.rollback()
+        print("WEBHOOK ERROR:", repr(e))
         raise HTTPException(
             status_code=500,
-            detail="Failed to process webhook"
+            detail=str(e)
         )

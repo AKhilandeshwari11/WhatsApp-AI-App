@@ -75,22 +75,27 @@ function App() {
   };
 
   const handleSendMessage = async (content) => {
-    try {
-      const response = await API.post("/send-message", {
-        sender: CURRENT_USER,
-        receiver: selectedPhone,
-        content,
-        status: "sent",
-      });
+  try {
+    const response = await API.post("/webhook", {
+      sender: selectedPhone,
+      receiver: CURRENT_USER,
+      content: content,
+      location: {
+        latitude: 0,
+        longitude: 0,
+      },
+      contact: {
+        name: "",
+        phone: "",
+      },
+    });
 
-      setMessages((previousMessages) => [
-        ...previousMessages,
-        response.data,
-      ]);
-    } catch (error) {
-      console.error("Failed to send message:", error);
-    }
-  };
+    await fetchMessages();
+
+  } catch (error) {
+    console.error("Failed to process message:", error);
+  }
+};
 
   const conversations = getConversations();
   const chatMessages = getChatMessages();
